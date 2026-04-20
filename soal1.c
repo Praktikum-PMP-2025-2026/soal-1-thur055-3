@@ -73,29 +73,34 @@ int main(){
             }
             else{
                 while (1){
-                    if (m > N-i && s == N-1){
+                    if (m > N-i && s == i+1){
                         arrout[i] = 0;
                         break;
                     }
-                    else if (m > N-i && !(s == N-1))
+                    else if (m > N-i && !(s == i+1))
                     {
                         arrout[i] = arrout[i-s];
                         break;
                     }
-                    else if (!(m > N-i) && (s == N-1))
+                    else if (!(m > N-i) && (s == i+1))
                     {
                         arrout[i] = arrout[i+m];
                         break;
                     }
-                    else if (!(m > N-i) && !(s == N-1)){
+                    
+                    else{
                         if(arrout[i + m] != -1 && arrout[i-s] == -1){
                             s++;
-                            printf("%d\n", m);
+                            
                         }
                         else if (arrout[i + m] == -1 && arrout[i-s] != -1)
                         {
                             m++;
-                            printf("%d\n", s);
+                            
+                        }
+                        else if (arrout[i+m] == -1 && arrout[i-s] == -1){
+                            s++;
+                            m++;
                         }
                         else if (arrout[i + m] != -1 && arrout[i-s] != -1)
                         {
@@ -103,6 +108,7 @@ int main(){
                             break;
                         }
                     }
+                    
                 }
             }
         }
