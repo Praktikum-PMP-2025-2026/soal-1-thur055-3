@@ -30,10 +30,11 @@ int main(){
                         break;
                     }
                     else{
+                        arrout[i] = arrout[i+m];
                         m++;
                     }
                 }
-                arrout[i] = arrout[i+m];
+                
             }
             else if (i == N-1)
             {
@@ -44,10 +45,11 @@ int main(){
                     }
                     else{
                         m++;
+                        
                     }
+                    arrout[i] = arrout[i-m];
                 }
                 
-                arrout[i] = arrout[i-m];
             }
             else{
                 while (1){
