@@ -25,13 +25,13 @@ int main(){
         if (arrout[i] == -1){
             if(i == 0){
                 while (arrout[i + m] == -1){
-                    if (m > N-i){
+                    if (m >= N-i){
                         arrout[i] = 0;
                         break;
                     }
                     else{
-                        arrout[i] = arrout[i+m];
                         m++;
+                        arrout[i] = arrout[i+m];
                     }
                 }
                 
