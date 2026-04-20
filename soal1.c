@@ -16,6 +16,7 @@ int main(){
     for(int i = 0; i< N; i++){
         arrout[i] = arr[i];
     }
+
     int m = 0;
     int s = 0;
     for (int i = 0; i<N;i++){
@@ -97,6 +98,7 @@ int main(){
         sum = sum + arrout[i];
     }
     printf("%d\n", arrout[N-1]);
+    sum = sum + arrout[N-1];
     printf("MAX_SUM %d", sum);
 
 }
