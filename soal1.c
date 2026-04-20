@@ -1,3 +1,12 @@
+/** EL2008 Praktikum Pemecahan Masalah dengan Pemrograman 2024/2025
+ *   Modul               : 2
+ *   Hari dan Tanggal    : Senin 20 April 2026
+ *   Nama (NIM)          : Arthur (13224055)
+ *   Nama File           : soal1.c
+ *   Deskripsi           : Pengecekan nilai hilang
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
