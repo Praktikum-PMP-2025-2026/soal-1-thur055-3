@@ -44,6 +44,8 @@ int main(){
     int m = 0;
     int s = 0;
     for (int i = 0; i<N;i++){
+        m = 0;
+        s = 0;
         if (arrout[i] == -1){
             if(i == 0){
                 while (arrout[i + m] == -1){
