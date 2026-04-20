@@ -96,7 +96,7 @@ int main(){
         printf("%d ", arrout[i]);
         sum = sum + arrout[i];
     }
-    printf("%d\n", arrout[N]);
+    printf("%d\n", arrout[N-1]);
     printf("MAX_SUM %d", sum);
 
 }
