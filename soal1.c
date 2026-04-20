@@ -41,34 +41,69 @@ int main(){
         printf("%d ", arridx[i]);
     }
         */
-    for (int i = 0; i<j;i++){
-        if (arridx[0] == 0){
-            if(arr[1]== -1){
-                arrout[0] = 0;
+    int m = 0;
+    int s = 0;
+    for (int i = 0; i<N;i++){
+        if (arrout[i] == -1){
+            if(i == 0){
+                while (arrout[i + m] == -1){
+                    if (m > N-i){
+                        arrout[i] = 0;
+                        break;
+                    }
+                    else{
+                        m++;
+                    }
+                }
+                arrout[i] = arrout[i+m];
+            }
+            else if (i == N-1)
+            {
+                while (arrout[i - m] == -1){
+                    if (m == N-1){
+                        arrout[i] = 0;
+                        break;
+                    }
+                    else{
+                        m++;
+                    }
+                }
+                
+                arrout[i] = arrout[i-m];
             }
             else{
-                arrout[0] = arrout[1];
-            }
-        }
-        else{
-            if(arr[arridx[i]+1]==-1 && arr[arridx[i]-1]==-1){
-                arrout[arridx[i]] = 0;
-                k++;
-            }
-            else if (arr[arridx[i]+1]==-1 && !(arr[arridx[i]-1]==-1))
-            {
-                arrout[arridx[i]] = arr[arridx[i]-1];
-                k++;
-            }
-            else if (!(arr[arridx[i]+1]==-1) && arr[arridx[i]-1]==-1)
-            {
-                arrout[arridx[i]] = arr[arridx[i]+1];
-                k++;
-            }
-            else if (!(arr[arridx[i]+1]==-1) && !(arr[arridx[i]-1]==-1))
-            {
-                arrout[arridx[i]] = (arr[arridx[i]-1]+arr[arridx[i]+1])/2;
-                k++;
+                while (1){
+                    if (m > N-i && s == N-1){
+                        arrout[i] = 0;
+                        break;
+                    }
+                    else if (m > N-i && !(s == N-1))
+                    {
+                        arrout[i] = arrout[i-s];
+                        break;
+                    }
+                    else if (!(m > N-i) && (s == N-1))
+                    {
+                        arrout[i] = arrout[i+m];
+                        break;
+                    }
+                    else if (!(m > N-i) && !(s == N-1)){
+                        if(arrout[i + m] != -1 && arrout[i-s] == -1){
+                            s++;
+                            printf("%d\n", m);
+                        }
+                        else if (arrout[i + m] == -1 && arrout[i-s] != -1)
+                        {
+                            m++;
+                            printf("%d\n", s);
+                        }
+                        else if (arrout[i + m] != -1 && arrout[i-s] != -1)
+                        {
+                            arrout[i] = (arrout[i + m] + arrout[i-s])/2;
+                            break;
+                        }
+                    }
+                }
             }
         }
     }
