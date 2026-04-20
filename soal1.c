@@ -1,18 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_DATA 512
-int search_len(int *arrin, int N){
-    int arrout[N];
-    int j = 0;
-    for (int i = 0; i<N; i++){
-        if(arrin[i]==-1){
-            arrout[j] = i;
-            j++;
-        }
-    }
-    return j;
-}
+
 
 int main(){
     int N;
@@ -27,20 +16,6 @@ int main(){
     for(int i = 0; i< N; i++){
         arrout[i] = arr[i];
     }
-    j = search_len(arr, N);
-    int arridx[j];
-    int k = 0;
-    for(int i = 0; i<N-1;i++){
-        if (arr[i]==-1){
-            arridx[k] = i;
-            k++;
-        }
-    
-    }
-    /*for(int i = 0; i<j; i++){
-        printf("%d ", arridx[i]);
-    }
-        */
     int m = 0;
     int s = 0;
     for (int i = 0; i<N;i++){
@@ -117,11 +92,11 @@ int main(){
     }
     printf("RECOVERED ");
     int sum = 0;
-    for(int i = 0; i < N;i++){
+    for(int i = 0; i < N-1;i++){
         printf("%d ", arrout[i]);
         sum = sum + arrout[i];
     }
-    printf("\n");
+    printf("%d\n", arrout[N]);
     printf("MAX_SUM %d", sum);
 
 }
